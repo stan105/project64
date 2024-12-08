@@ -1,6 +1,10 @@
+@font-face{
+  font-family: comic;
+  src: url("assets/COMIC.TTF");
+}
 body{
 	margin: 0px;
-	font-family: cursive;
+	font-family: comic;
 	text-align: center;
 	background-color: rgb(20, 20, 20);
 }
