@@ -1,10 +1,9 @@
 @font-face{
-	font-family: comic;
+	font-family: "comic";
 	src: url("assets/COMIC.TTF");
 }
 body{
 	margin: 0px;
-	font-family: comic;
 	text-align: center;
 	background-color: rgb(20, 20, 20);
 }
@@ -39,7 +38,6 @@ body{
 	bottom: 0;
 }
 button{
-	font-family: comic;
 	padding: 0px 6px 0px 6px;
 }
 a:-webkit-any-link{
@@ -50,6 +48,7 @@ a:-webkit-any-link:hover{
 }
 *{
 	color: white;
+	font-family: comic;
 	image-rendering: pixelated;
 }
 .barmain{
