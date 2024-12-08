@@ -1,133 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-body{
-	margin: 0px;
-	font-family: cursive;
-	text-align: center;
-	background-color: rgb(20, 20, 20);
-}
-.bg{
-	position: absolute;
-	background-image: url("assets/bg.png");
-	width: 100%;
-	height: 100%;
-	opacity: .02;
-}
-.main{
-	margin: 0 auto;
-	width: 100%;
-	position: relative;
-	max-width: 600px;
-	background: rgb(45, 45, 45);
-	min-height: 100%;
-	border-left: 3px solid rgb(60, 60, 60);
-	border-right: 3px solid rgb(60, 60, 60);
-}
-.maincenter{
-	margin: 0 auto;
-	position: relative;
-	max-width: 500px;
-	padding-top: 20px;
-}
-.footer{
-	background: rgb(35, 35, 35);
-	padding: 4px 0px 4px 0px;
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-}
-button{
-	font-family: cursive;
-	padding: 0px 6px 0px 6px;
-}
-a:-webkit-any-link{
-	color: rgb(40, 138, 255);
-}
-a:-webkit-any-link:hover{
-	color: rgb(112, 176, 255);
-}
-*{
-	color: white;
-	image-rendering: pixelated;
-}
-.barmain{
-	width: 75%;
-	max-width: 400px;
-	height: 25px;
-	background: rgb(35, 35, 35);
-	border: 2px solid rgb(50, 50, 50);
-}
-.barcenter{
-	height: 100%;
-	text-align: center;
-	background: rgb(75, 75, 75);
-	border: 2px solid rgb(50, 50, 50);
-=======
-body{
-	margin: 0px;
-	font-family: cursive;
-	text-align: center;
-	background-color: rgb(20, 20, 20);
-}
-.bg{
-	position: absolute;
-	background-image: url("assets/bg.png");
-	width: 100%;
-	height: 100%;
-	opacity: .02;
-}
-.main{
-	margin: 0 auto;
-	width: 100%;
-	position: relative;
-	max-width: 600px;
-	background: rgb(45, 45, 45);
-	min-height: 100%;
-	border-left: 3px solid rgb(60, 60, 60);
-	border-right: 3px solid rgb(60, 60, 60);
-}
-.maincenter{
-	margin: 0 auto;
-	position: relative;
-	max-width: 500px;
-	padding-top: 20px;
-}
-.footer{
-	background: rgb(35, 35, 35);
-	padding: 4px 0px 4px 0px;
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-}
-button{
-	font-family: cursive;
-	padding: 0px 6px 0px 6px;
-}
-a:-webkit-any-link{
-	color: rgb(40, 138, 255);
-}
-a:-webkit-any-link:hover{
-	color: rgb(112, 176, 255);
-}
-*{
-	color: white;
-	image-rendering: pixelated;
-}
-.barmain{
-	width: 75%;
-	max-width: 400px;
-	height: 25px;
-	background: rgb(35, 35, 35);
-	border: 2px solid rgb(50, 50, 50);
-}
-.barcenter{
-	height: 100%;
-	text-align: center;
-	background: rgb(75, 75, 75);
-	border: 2px solid rgb(50, 50, 50);
->>>>>>> db18a5a207658c1c584d07d0cd98975bc5ab0c82
-}
-=======
 @font-face{
 	font-family: comic;
 	src: url("assets/COMIC.TTF");
@@ -169,7 +39,7 @@ body{
 	bottom: 0;
 }
 button{
-	font-family: cursive;
+	font-family: comic
 	padding: 0px 6px 0px 6px;
 }
 a:-webkit-any-link{
@@ -195,4 +65,3 @@ a:-webkit-any-link:hover{
 	background: rgb(75, 75, 75);
 	border: 2px solid rgb(50, 50, 50);
 }
->>>>>>> 0df6fb57be7b19be6988cb7c2750f37884450b3e
