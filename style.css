@@ -64,3 +64,16 @@ a:-webkit-any-link:hover{
 	background: rgb(75, 75, 75);
 	border: 2px solid rgb(50, 50, 50);
 }
+.videop{
+	width: 100%;
+}
+video{
+	width: 100%;
+	position: relative;
+}
+.videocontrols{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: red;
+}
