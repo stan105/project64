@@ -13,18 +13,32 @@
 		<div class="bg"></div>
 		<div class="main">
 			<div class="maincenter">
-				<img src="assets/Project64_Logo.png"><br>
+				<a href="/index"><img src="assets/Project64_Logo.png"></a><br>
 				<u><b style="font-size: larger">
 					How to play Project 64!1!11
 				</b style></u>
 				<br>
-				<video controls src="assets/videos/manual_1.mp4"></video>
+				<button style="background: rgb(20, 20, 20);" onclick="videoplay()"><video class="videoplayer" controlslist="nodownload" src="assets/videos/manual_1.mp4"></video><div class="videoplayt"></div></button>
 				<br>
 				This video will teach you <b><u>How to join Project 64</u></b>!1!1!1!11 Make sure to not miss a step because this is so important
 			</div>
 			<footer class="footer">
 				<button style="border-style: hidden; background: rgb(199, 203, 250)"><a style="color: rgb(88, 101, 242);" href="https://discord.com/invite/3u6n2XKha6"><img style="padding-right: 4px" src="emojies/Discord.png" height="10">Discord</a href></button>
+				<a href="/manual">P64 Manual</a>
 			</footer>
 		</div>
 	</body>
+	<script>
+		const video = document.querySelector(".videoplayer");
+		const videotxt = document.querySelector(".videoplayt");
+		function videoplay(){
+			if (video.paused) {
+				video.play();
+				videotxt.innerHTML = "Play";
+			} else {
+				video.pause();
+				videotxt.innerHTML = "Pause";
+			}
+		}
+	</script>
 </html>
