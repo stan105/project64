@@ -8,11 +8,8 @@ body{
 	background-color: rgb(20, 20, 20);
 }
 @keyframes bgmove{
-	from{
-		background-posiiton: 0 0;
-	}
 	to{
-		background-poisition: 100% 0;
+		background-position: 100% 100%;
 	}
 }
 .bg{
@@ -21,7 +18,7 @@ body{
 	width: 100%;
 	height: 100%;
 	opacity: .02;
-	animation: bgmove 2s ease infinite
+	animation: bgmove 50s linear infinite;
 }
 .main{
 	display: grid;
