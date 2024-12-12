@@ -18,27 +18,87 @@
 					How to play Project 64!1!11
 				</b style></u>
 				<br>
-				<button style="background: rgb(20, 20, 20);" onclick="videoplay()"><video class="videoplayer" controlslist="nodownload" src="assets/videos/manual_1.mp4"></video><div class="videoplayt"></div></button>
+				<div class="videoplayermain">
+					<div class="videooverlay" onclick="videoplay()">
+						<div class="videooverlayicon"><img src="assets/play2.png"></div>
+					</div>
+					<video class="videoplayer" height="375" onclick="videoplay()" controlslist="nodownload" src="assets/videos/manual_1.mp4"></video>
+					<div class="videobuttons">
+						<button class="videoplay" onclick="videoplay()"><img class="videoplayicon" src="assets/play.png" height="11"></button>
+						<div class="videobar">
+							<div class="videomainbar"></div>
+						</div>
+					</div>
+				</div>
 				<br>
 				This video will teach you <b><u>How to join Project 64</u></b>!1!1!1!11 Make sure to not miss a step because this is so important
 			</div>
 			<footer class="footer">
-				<button style="border-style: hidden; background: rgb(199, 203, 250)"><a style="color: rgb(88, 101, 242);" href="https://discord.com/invite/3u6n2XKha6"><img style="padding-right: 4px" src="emojies/Discord.png" height="10">Discord</a href></button>
+				<button style="background: rgb(199, 203, 250)"><a style="color: rgb(88, 101, 242);" href="https://discord.com/invite/3u6n2XKha6"><img style="padding-right: 4px" src="emojies/Discord.png" height="10">Discord</a href></button>
 				<a href="/manual">P64 Manual</a>
 			</footer>
 		</div>
 	</body>
 	<script>
-		const video = document.querySelector(".videoplayer");
-		const videotxt = document.querySelector(".videoplayt");
+		const videoplayer = document.querySelector(".videoplayermain");
+		const video = videoplayer.querySelector(".videoplayer");
+		const videobuttons = videoplayer.querySelector(".videobuttons");
+		const videobar = videobuttons.querySelector(".videobar");
+		const overlay = videoplayer.querySelector(".videooverlay");
+		let bardrag = 0;
+		let videoplayed = 0;
 		function videoplay(){
+			if (overlay != null && videoplayed == 0) {
+				videoplayer.removeChild(overlay);
+			}
 			if (video.paused) {
 				video.play();
-				videotxt.innerHTML = "Play";
+				videoplayed = 1;
+				videobuttons.querySelector(".videoplay").querySelector(".videoplayicon").src = "assets/pause.png";
+				videobuttons.style.visibility = "visible";
 			} else {
 				video.pause();
-				videotxt.innerHTML = "Pause";
+				videobuttons.querySelector(".videoplay").querySelector(".videoplayicon").src = "assets/play.png";
 			}
 		}
+		function videofstoggle(){
+			if (document.fullscreenElement == null) {
+				video.requestFullscreen();
+			} else {
+				document.exitFullscreen();
+			}
+		}
+		function updatebar(a){
+			const rect = videobar.getBoundingClientRect();
+			const percent = Math.min(Math.max(0, a.x - rect.x), rect.width) / rect.width;
+			video.currentTime = percent * video.duration;
+			videobar.querySelector(".videomainbar").style.width = (video.currentTime / video.duration) * 100 + "%";
+		}
+		video.addEventListener("timeupdate", function(){
+			videobar.querySelector(".videomainbar").style.width = (video.currentTime / video.duration) * 100 + "%";
+			if (video.ended) {
+				videobuttons.querySelector(".videoplay").querySelector(".videoplayicon").src = "assets/play.png";
+			}
+		})
+		videoplayer.addEventListener("mouseover", function(){
+			if (videoplayed) {
+				videobuttons.style.visibility = "visible";
+			}
+		})
+		videoplayer.addEventListener("mouseout", function(){
+			videobuttons.style.visibility = "hidden";
+		})
+		videobar.addEventListener("mousedown", (a) => {
+			bardrag = 1;
+			updatebar(a);
+		})
+		document.addEventListener("mouseup", function(){
+			bardrag = 0;
+		})
+		document.addEventListener("mousemove", (a) => {
+			if (bardrag) {
+				updatebar(a);
+			}
+		})
 	</script>
 </html>
