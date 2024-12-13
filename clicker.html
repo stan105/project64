@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Klicker-Spiel</title>
+	</head>
+	<body>
+		Klicker-Spiel, wo man für keinen Grund klickt
+		<br>
+		<h1 class="clickamt">0</h1>
+		<button onclick="clickadd()" class="clickbutton">Klicken</button>
+	</body>
+	<style>
+		body{
+			align-content: center;
+			text-align: center;
+		}
+		@font-face{
+			font-family: "comic";
+			src: url("assets/COMIC.TTF");
+		}
+		@font-face{
+			font-family: "segoescript";
+			src: url("assets/SegoeScript.ttf");
+		}
+		*{
+			font-family: comic;
+		}
+		.clickamt{
+			font-family: segoescript;
+		}
+	</style>
+	<script>
+		const clickamount = document.querySelector(".clickamt");
+		const clickbutton = document.querySelector(".clickbutton");
+		let click = 0;
+		function clickadd(){
+			click++;
+			clickamount.innerHTML = click;
+		}
+	</script>
+</html>
