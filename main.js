@@ -43,7 +43,8 @@ function updatebarmove(a){
 	const percent = Math.min(Math.max(0, a.x - rect.x), rect.width) / rect.width;
 	videotimer.style.position = "absolute";
 	videotimer.style.left = (percent) * 100 + "%";
-	videotimer.style.transform = "translateY(-161%)";
+	videotimer.style.bottom = 0;
+	videotimer.style.transform = "translatex(-50%) translateY(-100%)";
 	videotimer.style.background = "rgb(20, 20, 20)";
 	videotimer.style.padding = "0px 10px";
 	videotimer.style["font-size"] = "12px";
@@ -72,6 +73,9 @@ videoplayer.addEventListener("mouseover", function(){
 		videobuttons.style.visibility = "visible";
 	}
 })
+videobar.addEventListener("mousemove", (a) => {
+	updatebarmove(a);
+})
 videobar.addEventListener("mouseout", function(){
 	if (videobar.querySelector(".videotimer") != null) {
 		videobar.removeChild(videobar.querySelector(".videotimer"));
@@ -88,7 +92,6 @@ document.addEventListener("mouseup", function(){
 	bardrag = 0;
 })
 document.addEventListener("mousemove", (a) => {
-	updatebarmove(a);
 	if (bardrag) {
 		updatebar(a);
 	}
