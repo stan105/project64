@@ -92,6 +92,7 @@ video{
 	height: 18px;
 }
 .videobar{
+	position: relative;
 	width: 100%;
 	height: 10px;
 	background: linear-gradient(0deg, #232323, #2f2f2f);
