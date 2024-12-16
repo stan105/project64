@@ -1,5 +1,7 @@
 <html>
 	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Project 64 - Manual</title>
 		<link rel="stylesheet" href="style.css">
 		<meta property="og:title" content="Project 64">
@@ -22,11 +24,12 @@
 					<div class="videooverlay" onclick="videoplay()">
 						<div class="videooverlayicon"><img src="assets/play2.png"></div>
 					</div>
-					<video class="videoplayer" height="375" onclick="videoplay()" controlslist="nodownload" src="assets/videos/manual_1.mp4"></video>
+					<video class="videoplayer" onclick="videoplay()" controlslist="nodownload" src="assets/videos/manual_1.mp4"></video>
 					<div class="videobuttons">
 						<button class="videoplay" onclick="videoplay()"><img class="videoplayicon" src="assets/play.png" height="11"></button>
 						<div class="videotime" style="margin: 0px 4px;"></div>
 						<div class="videobar">
+							<div class="videomainbarback"></div>
 							<div class="videomainbar"></div>
 						</div>
 					</div>

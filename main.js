@@ -3,6 +3,9 @@ const video = videoplayer.querySelector(".videoplayer");
 const videobuttons = videoplayer.querySelector(".videobuttons");
 const videobar = videobuttons.querySelector(".videobar");
 const overlay = videoplayer.querySelector(".videooverlay");
+const videotimer = document.createElement("div");
+videotimer.classList.add("videotimer");
+videobar.appendChild(videotimer);
 let bardrag = 0;
 let videoplayed = 0;
 function videoplay(){
@@ -33,22 +36,13 @@ function updatebar(a){
 	videobar.querySelector(".videomainbar").style.width = (video.currentTime / video.duration) * 100 + "%";
 }
 function updatebarmove(a){
-	var videotimer = videobar.querySelector(".videotimer");
-	if (videotimer == null) {
-		videotimer = document.createElement("div");
-		videotimer.classList.add("videotimer");
-		videobar.appendChild(videotimer);
-	}
 	const rect = videobar.getBoundingClientRect();
 	const percent = Math.min(Math.max(0, a.x - rect.x), rect.width) / rect.width;
-	videotimer.style.position = "absolute";
 	videotimer.style.left = (percent) * 100 + "%";
-	videotimer.style.bottom = 0;
-	videotimer.style.transform = "translatex(-50%) translateY(-100%)";
-	videotimer.style.background = "rgb(20, 20, 20)";
-	videotimer.style.padding = "0px 10px";
-	videotimer.style["font-size"] = "12px";
+	videotimer.style.visibility = "visible";
 	videotimer.innerHTML = formatdur(percent * video.duration);
+	videobar.querySelector(".videomainbarback").style.visibility = "visible";
+	videobar.querySelector(".videomainbarback").style.width = (percent) * 100 + "%";
 }
 const zeroformatter = new Intl.NumberFormat(undefined, {minimumIntegerDigits: 2});
 function formatdur(value){
@@ -76,10 +70,9 @@ videoplayer.addEventListener("mouseover", function(){
 videobar.addEventListener("mousemove", (a) => {
 	updatebarmove(a);
 })
-videobar.addEventListener("mouseout", function(){
-	if (videobar.querySelector(".videotimer") != null) {
-		videobar.removeChild(videobar.querySelector(".videotimer"));
-	}
+videobuttons.addEventListener("mouseout", function(){
+	videotimer.style.visibility = "hidden";
+	videobar.querySelector(".videomainbarback").style.visibility = "hidden";
 })
 videoplayer.addEventListener("mouseout", function(){
 	videobuttons.style.visibility = "hidden";
