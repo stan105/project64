@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Project 64 - Home</title>
+		<meta property="og:title" content="Project 64">
+		<meta property="og:description" content="The official Project 64 website omgsh!1!!1!1!">
+		<meta property="og:image" content="https://stan105.github.io/assets/Project64_Logo.png">
+		<meta property="og:image:type" content="image/png">
+		<link rel="icon" href="https://stan105.github.io/assets/p64_star.gif">
+		<meta name="theme-color" content="#02B851">
+		<link rel="stylesheet" href="style.css">
+	<head>
+	<body>
+		<div class="bg"></div>
+		<div class="main">
+			<div class="maincenter">
+				<a href="https://www.roblox.com/games/71338044786748/Project-64-REMASTERED"><img src="assets/Project64_Logo.png"></a><br>
+				<br>
+				<img src="assets/t_apireq.png">
+				<br>
+				Achieve Build Mode Level Data
+				<br>
+				<pre><code class="codespace language-lua">local http_service = game:GetService("HttpService");
+local request = http_service:PostAsync("https://stan105.github.io/api/v1/buildmode/get_bm_data/VM4LBOE0A");
+if (request) then
+	print(request.BuildModeLevelName);
+end;
+
+-- Available Level Data Content:
+
+-- BuildModeLevelName			Name of the Level
+-- BuildModeLevelDesc			Description of the Level
+-- BuildModeLevelAuthor			Author of the Level's Username
+-- BuildModeLevelAuthorID		Author of the Level's User ID
+-- BuildModeLevelData			Full Data of the Level
+
+-- Other Level Data Content:
+
+-- BuildModeLevelVersion		Version of when the Level was published / updated
+-- BuildModeLikePercent			The like-dislike-ratio in percent (0-100%)
+</code></pre>
+<br>
+
+			</div>
+			<footer class="footer">
+			<button style="border-style: hidden; background: rgb(199, 203, 250)"><a style="color: rgb(88, 101, 242);" href="https://discord.com/invite/3u6n2XKha6"><img style="padding-right: 4px" src="emojies/Discord.png" height="10">Discord</a href></button>
+			</footer>
+		</div>
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+	<script src="main.js"></script>
+</html>
